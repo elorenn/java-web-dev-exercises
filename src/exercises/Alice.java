@@ -13,5 +13,10 @@ public class Alice {
         System.out.println("Which word should we search for? ");
         String searchTerm = input.nextLine();
         System.out.println(firstSentence.toLowerCase().contains(searchTerm.toLowerCase()));
+        int index = firstSentence.indexOf(searchTerm);
+        int length = searchTerm.length();
+        System.out.println("Index of " + searchTerm + ": " + index + ". Length of " + searchTerm + ": " + length);
+        String modSentence = firstSentence.replace(searchTerm, " ");
+        System.out.println(modSentence);
     }
 }
