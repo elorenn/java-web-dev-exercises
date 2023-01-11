@@ -5,15 +5,17 @@ public class Area {
         Scanner input = new Scanner(System.in);
         System.out.println("Enter a radius: ");
         String strRadius = input.nextLine();
-
         try {
             double radius = Double.parseDouble(strRadius);
-            if (radius < 0) {
+            while (radius < 0) {
                 System.out.println("Error: radius cannot be negative.");
-            } else {
-                double area = Circle.getArea(radius);
-                System.out.println("The area of a circle with radius " + radius + " is: " + area);
+                System.out.println("Enter a radius: ");
+                strRadius = input.nextLine();
+                radius = Double.parseDouble(strRadius);
             }
+            double area = Circle.getArea(radius);
+            System.out.println("The area of a circle with radius " + radius + " is: " + area);
+
         }
         catch (NumberFormatException e) {
             System.out.println("Error: " + e);
