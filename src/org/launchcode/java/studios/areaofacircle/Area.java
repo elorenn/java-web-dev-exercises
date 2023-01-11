@@ -4,13 +4,23 @@ public class Area {
     public static void main(String[] arg) {
         Scanner input = new Scanner(System.in);
         System.out.println("Enter a radius: ");
-        double radius = input.nextDouble();
+        String strRadius = input.nextLine();
 
-        if (radius < 0) {
-            System.out.println("Error. A circle cannot have a negative radius.");
+        if (strRadius.isEmpty()) {
+            System.out.println("Error. Empty radius.");
         } else {
-            double area = Circle.getArea(radius);
-            System.out.println("The area of a circle with radius " + radius + " is: " + area);
+            try {
+                double radius = Double.parseDouble(strRadius);
+                if (radius < 0) {
+                    System.out.println("Error. Impossible radius.");
+                } else {
+                    double area = Circle.getArea(radius);
+                    System.out.println("The area of a circle with radius " + radius + " is: " + area);
+                }
+            }
+            catch (Exception e) {
+                System.out.println("Error. Radius must be a number.");
+            }
         }
     }
 }
