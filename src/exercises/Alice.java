@@ -12,6 +12,7 @@ public class Alice {
         Scanner input = new Scanner(System.in);
         System.out.println("Which word should we search for? ");
         String searchTerm = input.nextLine();
+        input.close();
         System.out.println(firstSentence.toLowerCase().contains(searchTerm.toLowerCase()));
         int index = firstSentence.indexOf(searchTerm);
         int length = searchTerm.length();
