@@ -7,6 +7,7 @@ public class MilesPerGallon {
         Double miles = input.nextDouble();
         System.out.println("How many gallons of gas have you consumed? ");
         Double gallons = input.nextDouble();
+        input.close();
         Double mpg = miles/gallons;
         System.out.println("miles-per-gallon: " + mpg);
     }
